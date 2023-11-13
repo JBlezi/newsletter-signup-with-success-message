@@ -1,0 +1,74 @@
+.list-image {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 40px;
+}
+
+.list-image li {
+  position: relative;
+  line-height: 1;
+}
+
+.list-image li::before {
+  content: '';
+  background-image: url(./assets/images/icon-list.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -40px;
+}
+
+.dark-slate-grey {
+  color: hsl(234, 29%, 20%)
+}
+
+.charcoal-grey {
+  color: hsl(235, 18%, 26%)
+}
+
+.bg-charcoal-grey {
+  background-color: hsl(235, 18%, 26%)
+
+}
+
+.bg-dark-slate-grey {
+  background-color: hsl(234, 29%, 20%)
+}
+
+
+.tomato {
+  color: hsl(4, 100%, 67%)
+}
+
+.invalid-input {
+  border-color: hsl(4, 100%, 67%) !important;
+  background-color: hsla(4, 100%, 67%, 0.2);
+  color: hsl(4, 100%, 67%) !important;
+}
+
+.invalid-input::placeholder {
+  color: hsl(4, 100%, 67%) !important;
+}
+
+
+.border-grey {
+  color: hsl(231, 7%, 60%);
+  border-color:hsl(231, 7%, 60%);
+  border-width: 1px;
+}
+
+.active:hover {
+  cursor: pointer;
+}
+
+.submit-button {
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.submit-button:hover {
+  background-image: linear-gradient(to right, #FF5478, #FF673D);
+  box-shadow: 0px 15px 50px rgba(255, 84, 120, 0.5);
+}

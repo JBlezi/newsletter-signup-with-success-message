@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./main.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-dark-slate-grey max-h-[847px]">
+  <div class="h-screen md:my-auto md:flex">
+    <div class="bg-white md:w-2/3 md:h-[60vh] md:my-auto md:mx-auto md:flex md:rounded-3xl">
+      <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" class="w-full rounded-b-lg md:hidden">
+      <div class="p-8 md:pl-12 md:w-4/7" style="color: hsl(234, 29%, 20%)">
+        <h1 class="text-5xl font-bold my-6">Stay updated!</h1>
+        <div class="paragraph">
+          <p class="my-6">Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="my-8 list-image">
+            <li class="my-6">Product discovery and building what matters</li>
+            <li class="my-6">Measuring to ensure updates are a success</li>
+            <li class="my-6">And much more!</li>
+          </ul>
+        </div>
+
+        <!-- Sign-up form start -->
+        <div id="form-container my-8">
+          <div class="flex justify-between">
+            <p class="font-bold text-sm">Email address</p>
+            <p id="error-message" class="text-right text-sm tomato" style="display: none">Valid email required</p>
+          </div>
+          <div class="my-2">
+            <form id="email-form" novalidate>
+                <input type="email" id="email-input" placeholder="email@company.com" class="p-4 border-grey w-full rounded-lg mb-4 active">
+                <button type="submit" class="bg-dark-slate-grey text-white w-full rounded-lg p-4 active submit-button">Subscribe to monthly newsletter</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sign-up form end -->
+
+
+      </div>
+      <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" class="rounded-b-lg hidden lg:block md:w-3/7 md:object-cover md:rounded-xl md:m-6">
+    </div>
+  </div>
+
+
+  <!-- Success message end -->
+
+  <div class="attribution hidden">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+    document.getElementById('email-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        const emailInput = document.getElementById('email-input');
+        const errorMessage = document.getElementById('error-message');
+
+        if (validateEmail(emailInput.value)) {
+            // If email is valid, redirect to the new page with email as a query parameter
+            window.location.href = 'thankyou.html?email=' + encodeURIComponent(emailInput.value);
+        } else {
+            // If email is not valid, show error message
+            errorMessage.style.display = 'block';
+            emailInput.classList.add('invalid-input'); // Add the class for invalid input
+        }
+    });
+
+
+  function validateEmail(email) {
+      const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return re.test(String(email).toLowerCase());
+  }
+
+  </script>
+</body>
+</html>
