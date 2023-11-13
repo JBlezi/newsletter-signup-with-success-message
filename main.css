@@ -77,8 +77,15 @@
   .max-width-custom {
     max-width: 375px;
   }
+  .max-width-custom-success {
+    max-width: 375px;
+  }
 }
 
 .max-width-custom {
   max-width: 800px;
+}
+
+.max-width-custom-success {
+  max-width: 400px;
 }
